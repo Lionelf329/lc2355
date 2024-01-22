@@ -133,7 +133,10 @@ function draw() {
         context.beginPath();
         context.rect(width * (i + 1.2), h - height * (books[i] + 0.2), width * 0.6, h);
         context.stroke();
-        if (ss.i === i) {
+        if (ss.j !== null && i > ss.j && i <= ss.i) {
+            context.fillStyle = '#bbf';
+            context.fill();
+        } else if (ss.i === i) {
             context.fillStyle = '#fda';
             context.fill();
         } else if (ss.stack.includes(i)) {
